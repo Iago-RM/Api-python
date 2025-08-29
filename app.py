@@ -13,8 +13,8 @@ def getusers():
 @app.route('/users/<user_id>', methods=['GET'])
 def getuser(user_id):
     user = usuarios[0]
-    for i in usuarios:
-        if i["id"] == user_id:
+    for i in range(len(usuarios)):
+        if int(usuarios[i]["id"]) == int(user_id):
             user = usuarios[i]
             break
     return jsonify(user), 200
