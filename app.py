@@ -53,8 +53,8 @@ def deleteUsers(user_id):
 @app.route('/users/<user_id>', methods=["PUT"])
 def updateUsers(user_id):
     user = usuarios[0]
-    for i in usuarios:
-        if i["id"] == user_id:
+    for i in range(len(usuarios)):
+        if int(usuarios[i]["id"]) == int(user_id):
             user = usuarios[i]
             break
     dados = request.json
